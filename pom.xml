@@ -51,11 +51,19 @@
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
-				<version>3.0.3</version>
+<!--				<version>3.0.3</version>-->
+				<version>2.1.5.RELEASE</version>
 				<extensions>true</extensions>
 				<configuration>
 					<testFramework>JUNIT5</testFramework>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>guru.springframework</groupId>
+						<artifactId>spring-cloud-contract-oa3</artifactId>
+						<version>2.1.2.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
