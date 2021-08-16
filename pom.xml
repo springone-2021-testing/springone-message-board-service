@@ -55,6 +55,7 @@
 				<version>2.1.5.RELEASE</version>
 				<extensions>true</extensions>
 				<configuration>
+					<baseClassForTests>springone.messageboardservice.MvcBaseTestClass</baseClassForTests>
 					<testFramework>JUNIT5</testFramework>
 				</configuration>
 				<dependencies>
