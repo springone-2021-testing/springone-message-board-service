@@ -17,7 +17,6 @@ class MessageController {
     }
 
     @GetMapping(value = "", produces = "application/json;charset=UTF-8")
-//    @GetMapping("")
     List<Message> getMessages() {
         return this.service.getMessages();
     }
