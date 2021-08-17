@@ -19,4 +19,7 @@ class MessageService {
         return this.repository.findAll();
     }
 
+    public Message addMessage(String user, String text) {
+        return this.repository.save(new Message(user,text));
+    }
 }

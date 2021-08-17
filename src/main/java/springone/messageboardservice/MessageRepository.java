@@ -7,5 +7,5 @@ import java.util.List;
 interface MessageRepository extends JpaRepository <Message, Integer> {
 
     List<Message> findAll();
-
+    Message save(Message newMessage);
 }

@@ -6,6 +6,7 @@ import org.mockito.Mockito;
 
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 
 public class MvcBaseTestClass {
@@ -19,8 +20,15 @@ public class MvcBaseTestClass {
         this.service = mock(MessageService.class);
         this.controller = new MessageController(this.service);
         RestAssuredMockMvc.standaloneSetup(this.controller);
+
         Mockito.when(this.service.getMessages())
                 .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
+
+        Mockito.when(this.service.addMessage(eq("Cora"),eq("Welcome to everyone!")))
+                .thenReturn(new Message(1,"Cora","Welcome to everyone!"));
+
+        Mockito.when(this.service.addMessage(eq("andy"),eq("I am here too!")))
+                .thenThrow(new java.lang.IllegalArgumentException("Failure: Name must be Uppercase"));
     }
 
 }
