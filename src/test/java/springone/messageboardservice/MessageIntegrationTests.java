@@ -47,8 +47,8 @@ public class MessageIntegrationTests {
                 this.testRestTemplate.exchange("/message", HttpMethod.GET, null, ptr);
 
         assertThat(exchange.getStatusCode()).isEqualTo(HttpStatus.OK);
-        List<Message> response = exchange.getBody();
-        Message message = response.get(0);
+        List<Message> messageList = exchange.getBody();
+        Message message = messageList.get(0);
         assertThat(message.getUsername()).isEqualTo("Cora");
         assertThat(message.getText()).isEqualTo("Welcome to everyone!");
     }

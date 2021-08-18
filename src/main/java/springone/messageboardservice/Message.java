@@ -10,10 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Entity
 @Table(name = "messages")
 class Message {
 

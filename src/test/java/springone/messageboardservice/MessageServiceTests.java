@@ -34,4 +34,6 @@ public class MessageServiceTests {
         assertThat(this.service.getMessages().get(0).getUsername()).isEqualTo("Cora");
         assertThat(this.service.getMessages().get(0).getText()).isEqualTo("Welcome to everyone!");
     }
+
+
 }

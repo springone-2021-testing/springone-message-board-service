@@ -1,7 +1,6 @@
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-    inProgress()
     description("should delete the message by name")
     request {
         url("/message/Cora")

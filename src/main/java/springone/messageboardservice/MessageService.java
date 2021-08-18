@@ -20,6 +20,11 @@ class MessageService {
     }
 
     public Message addMessage(String user, String text) {
-        return this.repository.save(new Message(user,text));
+        return this.repository.save(new Message(user, text));
     }
+
+    public List<Message> deleteMessageByUsername(String username) {
+        return this.repository.deleteByUsername(username);
+    }
+
 }

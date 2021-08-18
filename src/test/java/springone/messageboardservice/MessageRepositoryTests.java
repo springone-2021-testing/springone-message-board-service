@@ -23,4 +23,12 @@ class MessageRepositoryTests {
         assertThat(this.messageRepository.findAll().get(0).getText()).isEqualTo("Welcome to everyone!");
     }
 
+    @Test
+    void deleteByUsernameDoesNotReturnMessages() {
+        this.messageRepository.save(new Message("Cora", "Welcome to everyone!"));
+        assertThat(this.messageRepository.findAll().size()).isEqualTo(1);
+        this.messageRepository.deleteByUsername("Cora");
+        assertThat(this.messageRepository.findAll().size()).isEqualTo(0);
+    }
+
 }

@@ -29,6 +29,10 @@ public class MvcBaseTestClass {
 
         Mockito.when(this.service.addMessage(eq("andy"),eq("I am here too!")))
                 .thenThrow(new java.lang.IllegalArgumentException("Failure: Name must be Uppercase"));
+
+        Mockito.when(this.service.deleteMessageByUsername((eq("Cora"))))
+                .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
+
     }
 
 }

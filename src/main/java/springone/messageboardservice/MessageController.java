@@ -1,6 +1,6 @@
 package springone.messageboardservice;
 
-import org.springframework.http.MediaType;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,10 +20,6 @@ class MessageController {
         return this.service.getMessages();
     }
 
-//    @RequestMapping(value = "",
-//            method=RequestMethod.POST,
-//            consumes="application/json",
-//            produces="application/json;charset=UTF-8")
     @PostMapping(value = "", consumes = "application/json;charset=UTF-8",
         produces="application/json;charset=UTF-8")
     ApiResponse postMessage (@RequestBody CreateMessage newMessage) {
@@ -36,4 +32,18 @@ class MessageController {
         }
         return response;
     }
+
+    @DeleteMapping(value = "/{username}", consumes = "application/json;charset=UTF-8",
+            produces="application/json;charset=UTF-8")
+    AdminApiResponse deleteMessageByUsername(@PathVariable String username) {
+        AdminApiResponse response;
+        try {
+            List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);
+            response = new AdminApiResponse("Success", "Delete", deletedMessageList.get(0).getId().toString());
+        } catch (Exception e) {
+            response = new AdminApiResponse("Failure", "Delete", "0");
+        }
+        return response;
+    }
+
 }
