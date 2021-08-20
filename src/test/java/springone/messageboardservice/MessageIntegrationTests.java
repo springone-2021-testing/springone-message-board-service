@@ -26,6 +26,11 @@ public class MessageIntegrationTests {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
+//    static DockerImageName bitnamiPostgres = DockerImageName.parse("bitnami/postgresql").asCompatibleSubstituteFor("postgres");
+//
+//    @Container
+//    static PostgreSQLContainer<?> db = new PostgreSQLContainer<>(bitnamiPostgres).withEnv("PGDATA", "/opt/bitnami/postgresql/conf/").withUsername("0");
+
     @Container
     static PostgreSQLContainer<?> db = new PostgreSQLContainer<>("postgres");
 
