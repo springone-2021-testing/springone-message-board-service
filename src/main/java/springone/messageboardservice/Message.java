@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Getter
 @Entity
 @Table(name = "messages")
-class Message {
+public class Message {
 
     @Id
     @GeneratedValue
