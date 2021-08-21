@@ -1,5 +1,6 @@
 package springone.messageboardservice;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,14 +15,14 @@ class MessageController {
         this.service = service;
     }
 
-    @GetMapping(value = "", produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     List<Message> getMessages() {
         return this.service.getMessages();
     }
 
-    @PostMapping(value = "", consumes = "application/json;charset=UTF-8",
-        produces="application/json;charset=UTF-8")
+    @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     ApiResponse postMessage (@RequestBody CreateMessage newMessage) {
         ApiResponse response= new ApiResponse("0","Failure: Name must be Uppercase","Create");
@@ -34,7 +35,7 @@ class MessageController {
         return response;
     }
 
-    @DeleteMapping(value = "/{username}", produces="application/json;charset=UTF-8")
+    @DeleteMapping(value = "/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     AdminApiResponse deleteMessageByUsername(@PathVariable String username) {
         AdminApiResponse response;
