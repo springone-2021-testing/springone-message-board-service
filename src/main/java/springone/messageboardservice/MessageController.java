@@ -41,9 +41,9 @@ class MessageController {
         AdminApiResponse response;
         try {
             List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);
-            response = new AdminApiResponse("Success", "Delete", deletedMessageList.get(0).getId().toString());
+            response = new AdminApiResponse("Success", "Delete", Integer.toString(deletedMessageList.size()));
         } catch (Exception e) {
-            response = new AdminApiResponse("Failure", "Delete", "0");
+            response = new AdminApiResponse("Failure", "Delete", "-1");
         }
         return response;
     }
