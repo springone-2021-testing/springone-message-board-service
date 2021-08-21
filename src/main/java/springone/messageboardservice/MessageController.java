@@ -35,9 +35,9 @@ class MessageController {
         return response;
     }
 
-    @DeleteMapping(value = "/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "", produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    AdminApiResponse deleteMessageByUsername(@PathVariable String username) {
+    AdminApiResponse deleteMessageByUsername(@RequestParam(name="username") String username) {
         AdminApiResponse response;
         try {
             List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);

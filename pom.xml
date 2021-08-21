@@ -112,7 +112,8 @@
 					<baseClassForTests>springone.messageboardservice.MvcBaseTestClass</baseClassForTests>
 <!--					<contractDependency>-->
 <!--						<groupId>springone</groupId>-->
-<!--						<artifactId>message-board-*-contracts</artifactId>-->
+<!--						<artifactId>message-board-client-contracts</artifactId>-->
+<!--						<artifactId>message-board-admin-contracts</artifactId>-->
 <!--					</contractDependency>-->
 <!--					<contractsMode>LOCAL</contractsMode>-->
 				</configuration>
