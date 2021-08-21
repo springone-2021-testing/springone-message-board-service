@@ -1,7 +1,7 @@
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-    description("should delete the message by name")
+    description("should delete the message by user")
     request {
         url("/message?username=Cora")
         method(DELETE())

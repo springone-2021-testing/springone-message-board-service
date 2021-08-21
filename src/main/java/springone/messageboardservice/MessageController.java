@@ -37,15 +37,36 @@ class MessageController {
 
     @DeleteMapping(value = "", produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    AdminApiResponse deleteMessageByUsername(@RequestParam(name="username") String username) {
+    AdminApiResponse deleteMessageByUsernameOrKeyword(@RequestParam(name="username",defaultValue = "") String username,@RequestParam(name="keyword",defaultValue = "") String keyword) {
         AdminApiResponse response;
         try {
-            List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);
-            response = new AdminApiResponse("Success", "Delete", deletedMessageList.get(0).getId().toString());
+            if(keyword.length()==0) {
+                List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);
+                response = new AdminApiResponse("Success", "Delete", Integer.toString(deletedMessageList.size()));
+            } else if(username.length()==0) {
+                List<Message> deletedMessageList = this.service.deleteMessageByKeyword(keyword);
+                response = new AdminApiResponse("Success", "Delete", Integer.toString(deletedMessageList.size()));
+            } else {
+                List<Message> deletedMessageList = this.service.deleteMessageByKeywordAndUsername(keyword, username);
+                response = new AdminApiResponse("Success", "Delete", Integer.toString(deletedMessageList.size()));
+            }
         } catch (Exception e) {
-            response = new AdminApiResponse("Failure", "Delete", "0");
+            response = new AdminApiResponse("Failure", "Delete", "-1");
         }
         return response;
     }
 
+    @Deprecated
+    @DeleteMapping(value = "/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    AdminApiResponse deleteMessageByUsername(@PathVariable String username) {
+        AdminApiResponse response;
+        try {
+            List<Message> deletedMessageList = this.service.deleteMessageByUsername(username);
+            response = new AdminApiResponse("Success", "Delete", Integer.toString(deletedMessageList.size()));
+        } catch (Exception e) {
+            response = new AdminApiResponse("Failure", "Delete", "-1");
+        }
+        return response;
+    }
 }

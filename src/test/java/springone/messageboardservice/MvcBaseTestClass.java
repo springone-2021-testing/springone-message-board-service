@@ -33,6 +33,9 @@ public class MvcBaseTestClass {
         Mockito.when(this.service.deleteMessageByUsername((eq("Cora"))))
                 .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
 
+        Mockito.when(this.service.deleteMessageByKeyword((eq("selling"))))
+                .thenReturn(List.of(new Message(1, "Chip", "I am selling my bike!")));
+
     }
 
 }
