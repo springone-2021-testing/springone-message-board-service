@@ -110,6 +110,11 @@
 				<extensions>true</extensions>
 				<configuration>
 					<baseClassForTests>springone.messageboardservice.MvcBaseTestClass</baseClassForTests>
+<!--					<contractDependency>-->
+<!--						<groupId>springone</groupId>-->
+<!--						<artifactId>message-board-*-contracts</artifactId>-->
+<!--					</contractDependency>-->
+<!--					<contractsMode>LOCAL</contractsMode>-->
 				</configuration>
 				<dependencies>
 					<!-- Until guru.springframework.spring-cloud-contract-oa3:3.0.x gets released -->
