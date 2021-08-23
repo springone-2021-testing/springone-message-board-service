@@ -35,8 +35,6 @@ public class MvcBaseTestClass {
 
         Mockito.when(this.service.deleteMessageByKeyword((eq("selling"))))
                 .thenReturn(List.of(new Message(1, "Chip", "I am selling my bike!")));
-
-
     }
 
 }
