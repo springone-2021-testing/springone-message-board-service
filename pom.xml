@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>springone</groupId>
 	<artifactId>message-board-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>message-board-service</name>
 	<description>Demo project for SpringOne 2021</description>
 	<properties>
@@ -110,11 +110,15 @@
 				<extensions>true</extensions>
 				<configuration>
 					<baseClassForTests>springone.messageboardservice.MvcBaseTestClass</baseClassForTests>
-<!--					<contractDependency>-->
-<!--						<groupId>springone</groupId>-->
-<!--						<artifactId>message-board-*-contracts</artifactId>-->
-<!--					</contractDependency>-->
-<!--					<contractsMode>LOCAL</contractsMode>-->
+					<contractDependency>
+						<groupId>springone</groupId>
+						<artifactId>message-board-contracts</artifactId>
+						<!--Use ./mvnw install -Dcontracts.version=+ or ./mvnw install -Dcontracts.version=1.0.0, etc-->
+						<version>${contracts.version}</version>
+						<classifier>stubs</classifier>
+					</contractDependency>
+					<contractsPath>springone/message-board-contracts</contractsPath>
+					<contractsMode>LOCAL</contractsMode>
 				</configuration>
 				<dependencies>
 					<!-- Until guru.springframework.spring-cloud-contract-oa3:3.0.x gets released -->
