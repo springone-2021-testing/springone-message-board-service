@@ -15,7 +15,7 @@ rm -rf temp/api-contracts
 > The setting "-Dcontracts.version=+" will use the latest contracts in the local maven repository.
 > If appropriate, replace the "+" with a specific version number.
 ```shell
-./mvnw clean install -U -DfailOnInProgress=false -Dcontracts.version=+
+./mvnw clean install -Dcontracts.version=+
 ```
 
 ## Run app
@@ -41,7 +41,7 @@ PGPASSWORD="iu4w78hj" psql --host 127.0.0.1 -U postgres -d message-board -p 5432
 
 #### 2. Start app
 ```shell
-./mvnw spring-boot:run -U -DfailOnInProgress=false
+./mvnw spring-boot:run -DskipTests
 ```
 
 #### 3. Send requests
