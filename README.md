@@ -1,9 +1,22 @@
 # SpringOne Message Board Service
 
-## Run tests
+## Install contracts to local maven repository
+Run the following commands.
+The script will install the stubs jar file to your local maven repository.
+At the prompt, enter the option for the desired version of `springone-message-board-contracts`.
 ```shell
-./mvnw clean install -U -DfailOnInProgress=false
+git clone https://github.com/springone-2021-testcontainers/api-contracts temp/api-contracts
+./temp/api-contracts/bin/install-stubs-to-local-maven-repo.sh
+rm -rf temp/api-contracts
 ```
+
+## Run tests
+ > Note:
+ > The setting "-Dcontracts.version=+" will use the latest contracts in the local maven repository.
+ > If appropriate, replace the "+" with a specific version number.
+ ```shell
+./mvnw clean install -U -DfailOnInProgress=false -Dcontracts.version=+
+ ```
 
 ## Run app
 
