@@ -28,11 +28,11 @@ class MessageService {
     }
 
     public List<Message> deleteMessageByKeyword(String keyword) {
-
         return this.repository.deleteByTextContains(keyword);
     }
 
     public List<Message> deleteMessageByKeywordAndUsername(String keyword, String username) {
         return this.repository.deleteByTextContainsAndUsername(keyword,username);
     }
+
 }
