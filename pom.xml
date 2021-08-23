@@ -111,11 +111,11 @@
 				<configuration>
 					<baseClassForTests>springone.messageboardservice.MvcBaseTestClass</baseClassForTests>
 					<contractDependency>
-					        <groupId>springone</groupId>
-					        <artifactId>message-board-contracts</artifactId>
-					        <!--Use ./mvnw install -Dcontracts.version=+ or ./mvnw install -Dcontracts.version=1.0.0, etc-->
-					        <version>${contracts.version}</version>
-					        <classifier>stubs</classifier>
+						<groupId>springone</groupId>
+						<artifactId>message-board-contracts</artifactId>
+						<!--Use ./mvnw install -Dcontracts.version=+ or ./mvnw install -Dcontracts.version=1.0.0, etc-->
+						<version>${contracts.version}</version>
+						<classifier>stubs</classifier>
 					</contractDependency>
 					<contractsPath>springone/message-board-contracts</contractsPath>
 					<contractsMode>LOCAL</contractsMode>
