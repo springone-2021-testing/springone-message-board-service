@@ -11,9 +11,9 @@ rm -rf temp/api-contracts
 ```
 
 ## Run tests
- > Note:
- > The setting "-Dcontracts.version=+" will use the latest contracts in the local maven repository. 
- > If appropriate, replace the "+" with a specific version number.
+> Note:
+> The setting "-Dcontracts.version=+" will use the latest contracts in the local maven repository. 
+> If appropriate, replace the "+" with a specific version number.
 ```shell
 ./mvnw clean install -Dcontracts.version=+
 ```
