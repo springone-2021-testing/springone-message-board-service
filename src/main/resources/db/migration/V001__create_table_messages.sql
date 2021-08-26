@@ -6,3 +6,6 @@ create table if not exists messages (
     text varchar(255),
     primary key (id)
     );
+
+insert into messages (id, username, text)
+values (nextval('hibernate_sequence'), 'Cora_Iberkleid', 'Welcome to everyone!');
