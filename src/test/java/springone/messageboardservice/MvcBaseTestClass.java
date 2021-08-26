@@ -22,13 +22,13 @@ public class MvcBaseTestClass {
         RestAssuredMockMvc.standaloneSetup(this.controller);
 
         Mockito.when(this.service.getMessages())
-                .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
+                .thenReturn(List.of(new Message(1, "Cora_Iberkleid", "Welcome to everyone!")));
 
-        Mockito.when(this.service.addMessage(eq("Cora"),eq("Welcome to everyone!")))
-                .thenReturn(new Message(1,"Cora","Welcome to everyone!"));
+        Mockito.when(this.service.addMessage(eq("Cora_Iberkleid"),eq("Welcome to everyone!")))
+                .thenReturn(new Message(1,"Cora_Iberkleid","Welcome to everyone!"));
 
         Mockito.when(this.service.addMessage(eq("andy"),eq("I am here too!")))
-                .thenThrow(new java.lang.IllegalArgumentException("Failure: Name must be Uppercase"));
+                .thenThrow(new java.lang.IllegalArgumentException("Failure: Name format must be First_Last"));
 
         Mockito.when(this.service.deleteMessageByUsername((eq("Cora"))))
                 .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
