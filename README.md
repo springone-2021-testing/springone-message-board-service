@@ -5,7 +5,7 @@ Run the following commands.
 The script will install the stubs jar file to your local maven repository.
 At the prompt, enter the option for the desired version of `springone-message-board-contracts`.
 ```shell
-git clone https://github.com/springone-2021-testcontainers/api-contracts temp/api-contracts
+git clone https://github.com/springone-2021-testing/api-contracts temp/api-contracts
 ./temp/api-contracts/bin/install-stubs-to-local-maven-repo.sh
 rm -rf temp/api-contracts
 ```

@@ -30,8 +30,8 @@ public class MvcBaseTestClass {
         Mockito.when(this.service.addMessage(eq("andy"),eq("I am here too!")))
                 .thenThrow(new java.lang.IllegalArgumentException("Failure: Name format must be First_Last"));
 
-        Mockito.when(this.service.deleteMessageByUsername((eq("Cora"))))
-                .thenReturn(List.of(new Message(1, "Cora", "Welcome to everyone!")));
+        Mockito.when(this.service.deleteMessageByUsername((eq("Cora_Iberkleid"))))
+                .thenReturn(List.of(new Message(1, "Cora_Iberkleid", "Welcome to everyone!")));
 
     }
 

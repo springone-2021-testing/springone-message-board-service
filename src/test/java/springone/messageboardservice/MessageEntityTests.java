@@ -17,7 +17,7 @@ class MessageEntityTests {
 
     @Test
     void messageCanBePersisted(){
-        assertThatNoException().isThrownBy( () -> this.testEntityManager.persist(new Message("Cora", "Welcome to everyone!")));
+        assertThatNoException().isThrownBy( () -> this.testEntityManager.persist(new Message("Cora_Iberkleid", "Welcome to everyone!")));
     }
 
 }

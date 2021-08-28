@@ -19,7 +19,7 @@ public class MessageTests {
 
     @Test
     void createMessageWithUsernameAndTextShouldSucceed() {
-        assertThatNoException().isThrownBy(() -> new Message("Cora", "Welcome to everyone!"));
+        assertThatNoException().isThrownBy(() -> new Message("Cora_Iberkleid", "Welcome to everyone!"));
     }
     
 }

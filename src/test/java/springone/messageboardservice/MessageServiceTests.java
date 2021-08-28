@@ -26,12 +26,12 @@ public class MessageServiceTests {
     void getMessagesShouldReturnMessages() {
 
         List<Message> messsageList = new ArrayList<Message>();
-        Message message = new Message("Cora", "Welcome to everyone!");
+        Message message = new Message("Cora_Iberkleid", "Welcome to everyone!");
         messsageList.add(message);
 
         given(this.repository.findAll()).willReturn(messsageList);
 
-        assertThat(this.service.getMessages().get(0).getUsername()).isEqualTo("Cora");
+        assertThat(this.service.getMessages().get(0).getUsername()).isEqualTo("Cora_Iberkleid");
         assertThat(this.service.getMessages().get(0).getText()).isEqualTo("Welcome to everyone!");
     }
 

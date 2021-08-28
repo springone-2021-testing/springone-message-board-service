@@ -54,7 +54,7 @@ public class MessageIntegrationTests {
         assertThat(exchange.getStatusCode()).isEqualTo(HttpStatus.OK);
         List<Message> messageList = exchange.getBody();
         Message message = messageList.get(0);
-        assertThat(message.getUsername()).isEqualTo("Cora");
+        assertThat(message.getUsername()).isEqualTo("Cora_Iberkleid");
         assertThat(message.getText()).isEqualTo("Welcome to everyone!");
     }
 

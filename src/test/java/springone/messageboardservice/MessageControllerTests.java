@@ -32,7 +32,7 @@ class MessageControllerTests {
 
     @Test
     void getMessagesShouldReturnMessages() throws Exception {
-        Message message = new Message("Cora", "Welcome to everyone!");
+        Message message = new Message("Cora_Iberkleid", "Welcome to everyone!");
         List<Message> messageList = new ArrayList<Message>();
         messageList.add(message);
 

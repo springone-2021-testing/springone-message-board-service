@@ -22,7 +22,7 @@ kp image create springone-message-board-service \
   --env BP_MAVEN_BUILD_ARGUMENTS='package' \
   --env DOCKER_HOST=tcp://docker:80 \
   --wait \
-  --git https://github.com/springone-2021-testcontainers/springone-message-board-service \
+  --git https://github.com/springone-2021-testing/springone-message-board-service \
   --git-revision main \
   --dry-run --output  yaml > k8s/image.yaml
 

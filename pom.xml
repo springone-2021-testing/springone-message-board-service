@@ -114,7 +114,7 @@
 						<groupId>springone</groupId>
 						<artifactId>message-board-contracts</artifactId>
 						<!--Use ./mvnw install -Dcontracts.version=+ or ./mvnw install -Dcontracts.version=1.0.0, etc-->
-						<version>1.0.0-B</version>
+						<version>1.0.0</version>
 <!--						<version>${contracts.version}</version>-->
 						<classifier>stubs</classifier>
 					</contractDependency>
